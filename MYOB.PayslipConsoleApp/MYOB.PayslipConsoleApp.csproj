@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5F74D94-A3C4-41C2-B49B-F78EF9B43A0C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MYOB.PayslipConsoleApp</RootNamespace>
+    <AssemblyName>MYOB.PayslipConsoleApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\PayslipConsoleController.cs" />
+    <Compile Include="Models\PayslipConsoleModel.cs" />
+    <Compile Include="PayslipConsoleApp.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayslipConsoleAllEmployeesView.cs" />
+    <Compile Include="Views\PayslipConsoleMenuView.cs" />
+    <Compile Include="Views\PayslipConsoleResultView.cs" />
+    <Compile Include="Views\PayslipConsoleSingleEmployeeView.cs" />
+    <Compile Include="Views\PayslipConsoleStartView.cs" />
+    <Compile Include="Views\PayslipConsoleStopView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="BasicReferenceData.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MYOB.Controllers\MYOB.Controllers.csproj">
+      <Project>{9e0879c4-037d-4b2b-ab87-6ddb6220a1cb}</Project>
+      <Name>MYOB.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MYOB.Core\MYOB.Core.csproj">
+      <Project>{fb4d7b1d-fc6b-4226-b730-a0d7ad3cea06}</Project>
+      <Name>MYOB.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MYOB.Data\MYOB.Data.csproj">
+      <Project>{5b0f7c36-a10f-43c8-a814-d5b0e46b6a2c}</Project>
+      <Name>MYOB.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MYOB.Models\MYOB.Models.csproj">
+      <Project>{fb051943-2123-4cb5-b714-9e7738146af0}</Project>
+      <Name>MYOB.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MYOB.Views\MYOB.Views.csproj">
+      <Project>{7200ba49-639f-45b1-b7aa-260122e495ae}</Project>
+      <Name>MYOB.Views</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
