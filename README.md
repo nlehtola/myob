@@ -1,2 +1,0 @@
-# myob
-MYOB Exercise
